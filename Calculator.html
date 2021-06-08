@@ -1,0 +1,267 @@
+<html>
+  <head>
+    <title>Calculator</title>
+    <meta name="viewreport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      button {
+        font-size: 50px;
+        background-color: pink;
+        width: 24%;
+        height: 11%;
+        border: 1px solid #f000ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        width: auto;
+        height: auto;
+        background-color: lightblue;
+        border: 2px solid #f000ff;
+        padding: 2%;
+      "
+    >
+      <div
+        id="display"
+        style="
+          width: 97%;
+          height: 16%;
+          font-size: 45px;
+          word-wrap: break-word;
+          overflow: auto;
+          border: 2px solid #f000ff;
+          background-color: lightgreen;
+          text-align: right;
+          margin-left: 1%;
+        "
+      ></div>
+      <br />
+      <div>
+        <button
+          type="button"
+          id="clear"
+          class="symbol"
+          onclick="myFunctionC()"
+          style="color: red; margin-left: 1%"
+        >
+          C
+        </button>
+        <button
+          type="button"
+          id="delete"
+          class="symbol"
+          onclick="myFunctionD()"
+          style="color: red"
+        >
+          Del
+        </button>
+        <button
+          type="button"
+          id="openbracket"
+          class="symbol"
+          onclick="myFunctionBO()"
+          style="color: red"
+        >
+          (
+        </button>
+        <button
+          type="button"
+          id="closebracket"
+          class="symbol"
+          onclick="myFunctionBC()"
+          style="color: red"
+        >
+          )
+        </button>
+      </div>
+      <br />
+      <div>
+        <button
+          type="button"
+          id="one"
+          class="number"
+          onclick="myFunction1()"
+          style="margin-left: 1%"
+        >
+          1
+        </button>
+        <button type="button" id="two" class="number" onclick="myFunction2()">
+          2
+        </button>
+        <button type="button" id="three" class="number" onclick="myFunction3()">
+          3
+        </button>
+        <button
+          type="button"
+          id="plus"
+          class="symbol"
+          onclick="myFunctionP()"
+          style="color: red"
+        >
+          +
+        </button>
+      </div>
+      <br />
+      <div>
+        <button
+          type="button"
+          id="four"
+          class="number"
+          onclick="myFunction4()"
+          style="margin-left: 1%"
+        >
+          4
+        </button>
+        <button type="button" id="five" class="number" onclick="myFunction5()">
+          5
+        </button>
+        <button type="button" id="six" class="number" onclick="myFunction6()">
+          6
+        </button>
+        <button
+          type="button"
+          id="minus"
+          class="symbol"
+          onclick="myFunctionM()"
+          style="color: red"
+        >
+          -
+        </button>
+      </div>
+      <br />
+      <div>
+        <button
+          type="button"
+          id="seven"
+          class="number"
+          onclick="myFunction7()"
+          style="margin-left: 1%"
+        >
+          7
+        </button>
+        <button type="button" id="eight" class="number" onclick="myFunction8()">
+          8
+        </button>
+        <button type="button" id="nine" class="number" onclick="myFunction9()">
+          9
+        </button>
+        <button
+          type="button"
+          id="into"
+          class="symbol"
+          onclick="myFunctionI()"
+          style="color: red"
+        >
+          x
+        </button>
+      </div>
+      <br />
+      <div>
+        <button
+          type="button"
+          id="decimal"
+          class="symbol"
+          onclick="myFunctionDe()"
+          style="color: red; margin-left: 1%"
+        >
+          .
+        </button>
+        <button type="button" id="zero" class="number" onclick="myFunction0()">
+          0
+        </button>
+        <button
+          type="button"
+          id="equal"
+          class="symbol"
+          onclick="myFunctionE()"
+          style="color: red"
+        >
+          =
+        </button>
+        <button
+          type="button"
+          id="divide"
+          class="symbol"
+          onclick="myFunctionDi()"
+          style="color: red"
+        >
+          /
+        </button>
+      </div>
+      <br />
+    </div>
+  </body>
+  <script>
+    var ele = document.getElementById("display");
+    ele.scrollIntoView();
+    function myFunctionC() {
+      ele.innerHTML = " ";
+    }
+    function myFunctionD() {
+      var ele1 = ele.innerHTML;
+      ele.innerHTML = ele1.slice(0, -1);
+    }
+    function myFunctionBO() {
+      ele.innerHTML = ele.innerHTML + "(";
+    }
+    function myFunctionBC() {
+      ele.innerHTML = ele.innerHTML + ")";
+    }
+    function myFunction1() {
+      ele.innerHTML = ele.innerHTML + "1";
+    }
+    function myFunction2() {
+      ele.innerHTML = ele.innerHTML + "2";
+    }
+    function myFunction3() {
+      ele.innerHTML = ele.innerHTML + "3";
+    }
+    function myFunctionP() {
+      ele.innerHTML = ele.innerHTML + "+";
+    }
+    function myFunction4() {
+      ele.innerHTML = ele.innerHTML + "4";
+    }
+    function myFunction5() {
+      ele.innerHTML = ele.innerHTML + "5";
+    }
+    function myFunction6() {
+      ele.innerHTML = ele.innerHTML + "6";
+    }
+    function myFunctionM() {
+      ele.innerHTML = ele.innerHTML + "-";
+    }
+    function myFunction7() {
+      ele.innerHTML = ele.innerHTML + "7";
+    }
+    function myFunction8() {
+      ele.innerHTML = ele.innerHTML + "8";
+    }
+    function myFunction9() {
+      ele.innerHTML = ele.innerHTML + "9";
+    }
+    function myFunctionI() {
+      ele.innerHTML = ele.innerHTML + "*";
+    }
+    function myFunctionDe() {
+      ele.innerHTML = ele.innerHTML + ".";
+    }
+    function myFunction0() {
+      ele.innerHTML = ele.innerHTML + "0";
+    }
+    function myFunctionE() {
+      var x = ele.innerHTML;
+      try {
+        var y = eval(x);
+        ele.innerHTML = y;
+      } catch (error) {
+        alert("Invalid Syntax");
+        ele.innerHTML = " ";
+      }
+    }
+    function myFunctionDi() {
+      ele.innerHTML = ele.innerHTML + "/";
+    }
+  </script>
+</html>
